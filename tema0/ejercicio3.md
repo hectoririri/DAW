@@ -24,3 +24,6 @@ if __name__ == '__main__':
 
 Una vez pegado el código, lo ejecutaremos y podremos confirmar que nuestro servidor web se lanzó correctamente si vemos lo siguiente --> 
 [pantalla 2](/tema0/pantalla2.png).
+
+Creando un index.html y almacenándolo junto al archivo ejectuable de python, podremos visualizar nuestra página web como en este ejemplo -->
+[pantalla 3](/tema0/pantalla3.png).
