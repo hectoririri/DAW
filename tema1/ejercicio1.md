@@ -26,7 +26,7 @@ sudo chmod 755 script1.sh
 Listaremos la carpeta actual para confirmar la creación del fichero script y sus permisos correspondientes con **"ls -l"**.
 Este es el resultado del script con los permisos modificados -->
 
-[imagen](/tema1/imagenes/lsscript1.png)
+[imagen](/tema1/imagenes/script1ls.png)
 
 Para editar nuestro script debemos de ejecutar el comando **"nano"** seguido del nombre del script para editarlo. Nano es un editor de texto que Ubuntu trae por defecto:
 ```ubuntu
