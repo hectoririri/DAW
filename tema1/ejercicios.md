@@ -1,6 +1,6 @@
-# Este ejercicio consta de 3 apartados.
+# Ejercicio 1. 
 
-## 1º Apartado
+## Crea un script que añada un puerto de escucha en el fichero de configuración de Apache. El puerto se recibirá como parámetro en la llamada y se comprobará que no esté ya presente en el fichero de configuración.
 *"Crea un script que añada un puerto de escucha en el fichero de configuración de Apache. 
 El puerto se recibirá como parámetro en la llamada y se comprobará que no esté ya presente en el fichero de configuración."*
 
@@ -32,3 +32,8 @@ sudo nano scrip1.sh
 ```
 Escribiremos el siguiente script y lo guardamos pulsando Ctrl+O y Enter:
 [imagen](/tema1/imagenes/script1.png)
+
+Ahora ejecutaremos el script utilizando **"./"** antes de escribir el nombre del script en el terminal, para así ejecutarlo. Probaremos ejecutándolo sin argumentos, con uno correcto y otro incorrecto para comprobar que se ejecuta correctamente:
+[imagen](/tema1/imagenes/script1ejecutado.png)
+
+De esta manera, nuestro script está funcionando correctamente.
