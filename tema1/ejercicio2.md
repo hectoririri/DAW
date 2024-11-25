@@ -20,4 +20,5 @@ Al guardar con Ctrl+O y Enter, lo ejecutaremos de diferentes maneras para compro
 sudo ./script2.sh ip dominio
 ```
 [Imagen pruebas script2.sh](/tema1/imagenes/script2ejecutado.png)
+[Imagen archivo hosts tras las pruebas script2.sh](/tema1/imagenes/script2hosts.png)
 Podemos ver que las condiciones del script funcionan correctamente y no deja añadir un dominio si ya existe, y lo añade si no existe.
