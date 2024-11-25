@@ -28,7 +28,7 @@ Este es el resultado del script con los permisos modificados -->
 
 Para editar nuestro script debemos de ejecutar el comando **"nano"** seguido del nombre del script para editarlo. Nano es un editor de texto que Ubuntu trae por defecto:
 ```ubuntu
-sudo nano scrip1.sh
+sudo nano script1.sh
 ```
 Escribiremos el siguiente script y lo guardamos pulsando Ctrl+O y Enter:
 
