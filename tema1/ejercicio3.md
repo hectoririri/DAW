@@ -14,9 +14,9 @@ Editaremos el código del script con el editor de texto **"nano"** y escribiremo
 ```ubuntu
 sudo nano script3.sh
 ```
-Ejecutaremos el script de diferentes maneras para comprobar que el código funciona correctamente:
-
 [Imagen código script3.sh](/tema1/imagenes/script3.png)
+
+Ejecutaremos el script de diferentes maneras para comprobar que el código funciona correctamente:
 ```ubuntu
 sudo ./script3.sh 
 ```
