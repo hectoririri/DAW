@@ -24,3 +24,5 @@ sudo ./script3.sh
 
 
 Podemos ver que las condiciones del script funcionan correctamente. No deja añadir un dominio si ya existe y lo añade si no existe.
+
+Documentación a parte de la moodle para el comando cat ODF: https://blog.pachahosting.com/como-escribir-texto-en-un-archivo-usando-el-comando-linux-cat/
