@@ -1,6 +1,6 @@
 ## Ejercicio 3
 
-# 
+# Crea un script que nos permita crear una página web con un título, una cabecera y un mensaje
 
 Volveremos a ingresar a la carpeta de **"mis_scripts"** y crearemos nuestro último script. Ejecutaremos el comando **"touch"** seguido de ***script3.sh***.
 ```ubuntu
@@ -22,4 +22,4 @@ sudo ./script3.sh
 [Imagen pruebas script3.sh](/tema1/imagenes/script3ejecutado.png)
 
 
-Podemos ver que las condiciones del script funcionan correctamente y no deja añadir un dominio si ya existe, y lo añade si no existe.
+Podemos ver que las condiciones del script funcionan correctamente. No deja añadir un dominio si ya existe y lo añade si no existe.
