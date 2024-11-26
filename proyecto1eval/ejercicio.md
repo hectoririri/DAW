@@ -3,7 +3,7 @@
 ## En este archivo realizaremos todas las actividades del primer proyecto de esta primera evaluación. Iremos apartado por apartado explicando y mostrando con capturas de pantalla cómo lo realizo.
 
 
-### Instalación del servidor web apache. Usaremos dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python
+### 1. Instalación del servidor web apache. Usaremos dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python
 Para la instalación de apache abriremos un terminal de Ubuntu *(Ctrl+T)* y actualizaremos el sistema con el siguiente comando utilizando **"apt"**. Siempre utilizaremos **"sudo"** de aquí en adelante al necesitar de permisos de administrador.
 ```ubuntu
 sudo apt update ; sudo apt upgrade
@@ -15,6 +15,14 @@ sudo apt install apache2
 
 [Foto de la instalación](/proyecto1eval/imagenes/apache2_instalacion.png)
 
+Una vez terminada la instalación, podremos comprobar si se hizo correctamente ejecutando los siguientes comandos para visualizar la versión de Apache2 y el status en el que se encuentra:
+```ubuntu
+apache -v
+sudo systemctl status apache2
+```
+[Foto de la instalación](/proyecto1eval/imagenes/apache2_comprobacion_instalacion.png)
+
+Ahora 
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql
 
 
