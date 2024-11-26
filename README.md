@@ -19,4 +19,4 @@ Ejercicio | Descripción
 
 ## PROYECTO 1º Evaluación
 Proyecto de 1º Evaluación donde configuramos nuestro servidor Apache
-[ejercicio proyecto](/proyecto1ºeval/ejercicio.md)
+[ejercicio proyecto](/proyecto1eval/ejercicio.md)
