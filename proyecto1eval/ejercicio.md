@@ -36,13 +36,13 @@ $ sudo cat > /var/www/departamentos_centro_intranet/index.html
 Soy la página de departamentos.centro.intranet
 ```
 Este es el resultado final de nuestra estructura de carpetas con los index.html correspondientes para cada carpeta:
-[Foto de la estructura de carpetas en /var/www/](/proyecto1eval/imagenes/apache2_estructura_carpetaspng.png)
+[Foto de la estructura de carpetas en /var/www/](/proyecto1eval/imagenes/apache2_estructura_carpetas.png)
 
-Ahora crearemos un fichero de onfiguración para cada dominio en el que le indicaremos su ruta de carpeta, nombre de dominio, etc... Para esto, iremos a la carpeta **"/etc/apache2/sites-avaliables"**.
+Ahora crearemos un fichero de onfiguración para cada dominio en el que le indicaremos su ruta de carpeta, nombre de dominio, etc... Para esto, iremos a la carpeta **"/etc/apache2/sites-avaliable"**.
 En esta carpeta se encuentran los ficheros de configuración para cada dominio que tengamos en nuestro Apache2. Copiaremos el que hay por defecto y lo modificaremos para cada dominio:
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql
 ```ubuntu
-$ cd /etc/apache2/sites-avaliables
+$ cd /etc/apache2/sites-avaliable
 $ sudo cp 000-default.conf centro_intranet.conf
 $ sudo cp 000-default.conf departamentos_centro_intranet.conf
 ```
@@ -57,6 +57,16 @@ Ahora modificaremos el fichero de la siguiente manera y haremos lo mismo para el
 
 [Foto de configuración de departamentos_centro_intranet.conf](/proyecto1eval/imagenes/apache2_departamentos_centro_intranet.conf.png)
 
+*"ServerName"* -> Nombre del dominio
+*"ServerAdmin"* -> Correo del administrador del dominio
+*"DocumentRoot"* -> Recursos que el dominio accederá, como su index.html, imagenes, etc...
+
+Ahora que los ficheros de configuración están listos, los habilitaremos para Apache2 utilizando el comando **"a2ensite"** para habilitar el sitio web.
+Al usarlo hacemos referencia al fichero de configuración del sitio web, por lo que lo ejecutaremos con ambos ficheros:
+```ubuntu
+$ sudo a2ensite centro_intranet.conf
+$ sudo a2ensite departamentos_centro_intranet.conf
+```
 
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
 
