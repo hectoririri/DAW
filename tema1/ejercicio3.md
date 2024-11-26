@@ -23,6 +23,7 @@ sudo ./script3.sh
 [Imagen pruebas script3.sh](/tema1/imagenes/script3ejecutado.png)
 
 Ahora, el código genera una página html con los argumentos que el usuario le pase al ejecutar el **"script3.sh"**. Aquí podemos ver una visualización de la página web:
+
 [Imagen página web script3.sh](/tema1/imagenes/script3html.png)
 
 Documentación a parte de la moodle para el comando cat ODF: https://blog.pachahosting.com/como-escribir-texto-en-un-archivo-usando-el-comando-linux-cat/
