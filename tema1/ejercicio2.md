@@ -14,7 +14,7 @@ Abriremos el script con el editor de texto **"nano"** y escribiremos el siguient
 ```ubuntu
 sudo nano script2.sh
 ```
-Al guardar con Ctrl+O y Enter, lo ejecutaremos de diferentes maneras para comprobar que el código funciona correctamente:ç
+Al guardar con Ctrl+O y Enter, lo ejecutaremos de diferentes maneras para comprobar que el código funciona correctamente:
 
 
 [Imagen código script2.sh](/tema1/imagenes/script2.png)
