@@ -13,7 +13,7 @@ Cuando nos pregunte "¿Desea continuar? [Y/n], escribiendo **"y"** y pulsando In
 sudo apt install apache2
 ```
 
-[Foto de la instalación](/proyecto/imagenes/apache2_instalacion.png)
+[Foto de la instalación](/proyecto1eval/imagenes/apache2_instalacion.png)
 
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql
 
