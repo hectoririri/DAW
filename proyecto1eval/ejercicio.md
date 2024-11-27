@@ -88,6 +88,9 @@ $ sudo nano /etc/hosts
 ```
 [Foto de archivo hosts](/proyecto1eval/imagenes/apache2_hosts.png)
 
+Una vez guardado *(Ctrl+O y Enter)* podremos ir a nuestro navegador e introducir el dominio para comprobar que funciona correctamente. Introduciremos **"http://centro.intranet"** y **"http://departamentos.centro.intranet"**:
+[Foto de dominios funcionando](/proyecto1eval/imagenes/apache2_dominios_funcionando.png)
+
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql
 
 
@@ -95,7 +98,20 @@ $ sudo nano /etc/hosts
 
 
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
-
+Para activar el módulo "wsgi" ejecutaremos el comando **"a2enmod"** seguido del nombre del módulo. Antes actualizaremos el sistema:
+```ubuntu
+$ sudo apt update ; sudo apt upgrade
+$ sudo a2enmod wsgi
+```
+Ahora reiniciaremos Apache2 para confirmar que el módulo se ha habilitado correctamente ejecutando también el status del servidor Apache2:
+```ubuntu
+$ sudo systemctl reload apache2
+$ sudo systemctl status apache2
+```
+En caso de que no lo tengamos instalado, podremos hacerlo ejecutando el comando **"apt install"** seguido de la libreria específica:
+```ubuntu
+$ sudo apt install libapache2-mod-wsgi-py3
+```
 
 ### Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
 
