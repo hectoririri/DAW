@@ -75,7 +75,18 @@ Una vez habilitados ambos ficheros, reiniciaremos el servicio de Apache2 para qu
 $ sudo systemctl reload apache2
 $ sudo systemctl status apache2
 ```
+Al comprobar que el servidor está activo, añadiremos ambos dominios al fichero **"hosts"** de nuestro Ubuntu para poder acceder a los dominios, ya que estos no son públicos tenemos que especificar en qué máquina se encuentra.
+Como se encuentra en nuestra propia máquina, indicaremos nuestra IP y los nombres de los dominios. Nuestra IP la conseguiremos ejecutando el comando **"ip a"** y recogiendo la IP que se encuentre en el apartado "inet" de la siguiente manera:
+```ubuntu
+$ ip a
+```
+[Foto de mi ip](/proyecto1eval/imagenes/apache2_ip.png)
 
+Ahora que tenemos nuestra IP, ejecutaremos el comando **"nano"** en el archivo *"/etc/hosts"* para indicar a esta IP los dominios a los que queremos acceder:
+```ubuntu
+$ sudo nano /etc/hosts
+```
+[Foto de archivo hosts](/proyecto1eval/imagenes/apache2_hosts.png)
 
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql
 
