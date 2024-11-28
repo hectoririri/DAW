@@ -92,7 +92,22 @@ Una vez guardado *(Ctrl+O y Enter)* podremos ir a nuestro navegador e introducir
 [Foto de dominios funcionando](/proyecto1eval/imagenes/apache2_dominios_funcionando.png)
 
 ### Activar los módulos necesarios para ejecutar php y acceder a mysql
+Para activar los módulos, volveremos a ejecutar el comando **"a2enmod"** seguido del módulo que queramos activar, en nuestro caso, php:
+```ubuntu
+$ sudo a2enmod php
+```
 
+En caso de que al ejecutarlo nos indique el módulo no existe, lo instalaremos ejecutando el comando **"apt"** con los siguientes parámetros. De esta manera, también estaremos instalando la extensión para acceder a mysql:
+```ubuntu
+# sudo apt update
+# sudo apt install php libapache2-mod-php php-mysql
+```
++ *"php-mysql"* permite a PHP comunicarse con MySQL.
+
+Una vez instalado php y sus extensiones, reiniciaremos nuestro servidor Apache2 con **"systemctl"**:
+```ubuntu
+# sudo systemctl restart apache2
+```
 
 ### Instala y configura wordpress
 
