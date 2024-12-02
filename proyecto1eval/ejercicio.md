@@ -109,7 +109,7 @@ Una vez instalado php y sus extensiones, reiniciaremos nuestro servidor Apache2 
 # sudo systemctl restart apache2
 ```
 
-### Instala y configura wordpress
+### Instala y configura wordpress [ayuda](https://www.hostinger.es/tutoriales/instalar-wordpress-ubuntu)
 Para instalar Wordpress primero debemos de tener instalado PHP y MySQL. Como ya tenemos php instalado en nuestra máquina, comenzaremos con la instalación de MySQL. Debemos de tener una base de datos MySQL antes de instalar Wordpress, por lo que ejecutaremos el comando **"apt"** seguido de los siguientes parámetros:
 ```ubuntu
 $ sudo apt install mysql-server -y
@@ -119,6 +119,17 @@ Una ve instalado, abriremos el terminal de MySQL con el comando **"mysql"**:
 ```ubuntu
 $ sudo mysql
 ```
+
+Aquí cambiaremos la contraseña del usuario root a una más segura ejecutando el siguiente comando en la terminal de MySQL:
+```mysql
+mysql> CREATE DATABASE WordPressBD DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+```
+
+Ya asegurado nuestro usuario root, crearemos un usuario para operar con la base de datos de Wordpress:
+```mysql
+GRANT ALL ON WordPressBD.* TO ' UsuarioWordPress '@'localhost' IDENTIFIED BY 'NuevaContraseña';
+```
+
 
 
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
