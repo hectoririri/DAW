@@ -99,8 +99,8 @@ $ sudo a2enmod php
 
 En caso de que al ejecutarlo nos indique el módulo no existe, lo instalaremos ejecutando el comando **"apt"** con los siguientes parámetros. De esta manera, también estaremos instalando la extensión para acceder a mysql:
 ```ubuntu
-# sudo apt update
-# sudo apt install php libapache2-mod-php php-mysql
+$ sudo apt update
+$ sudo apt install php libapache2-mod-php php-mysql
 ```
 + *"php-mysql"* permite a PHP comunicarse con MySQL.
 
@@ -110,6 +110,15 @@ Una vez instalado php y sus extensiones, reiniciaremos nuestro servidor Apache2 
 ```
 
 ### Instala y configura wordpress
+Para instalar Wordpress primero debemos de tener instalado PHP y MySQL. Como ya tenemos php instalado en nuestra máquina, comenzaremos con la instalación de MySQL. Debemos de tener una base de datos MySQL antes de instalar Wordpress, por lo que ejecutaremos el comando **"apt"** seguido de los siguientes parámetros:
+```ubuntu
+$ sudo apt install mysql-server -y
+```
+
+Una ve instalado, abriremos el terminal de MySQL con el comando **"mysql"**:
+```ubuntu
+$ sudo mysql
+```
 
 
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
