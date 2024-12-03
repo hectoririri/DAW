@@ -162,7 +162,20 @@ $ sudo chown -R www-data:www-data /var/www/centro_intranet
 $ sudo chmod -R 755 /var/www/centro_intranet
 $ sudo systemctl restart apache2
 ```
+Ahora ingresaremos en el dominio de centros.intranet y podremos ver la primera pantalla de configuración de WordPress: [captura de inicio en WordPress](imagenes/wordpress_idiomas.png)
 
+Seleccionaremos nuestro idioma y continuaremos. WordPress nos informará de los datos que nos pedirá a continuación para continuar con la configuración, que son sobre la base de datos que creamos anteriormente. Continuamos.
+
+Ahora introduciremos el nombre de la base de datos, el usuario y contraseña que creamos anteriormente. Una vez introducido pulsaremos sobre **"Enviar"**:
+[captura de información base de datos en WordPress](imagenes/wordpress_base_de_datos.png)
+
+Nos confirmará que WordPress ha establecido una conexión con nuestra base de datos y ahora podremos terminar con la instalación. Pulsaremos sobre **"Realizar la instalación"**.
+Ahora tendremos que rellenar la información básica del título del sitio web, usuario y contraseña, correo electrónico, etc...:
+[captura de información básica WordPress](imagenes/wordpress_informacion_basica.png)
+
+Podremos ver en la siguiente pantalla de confirmación que nuestro WordPress ha sido instalado correctamente. Ahora iniciaremos sesión y accederemos a nuestro WordPress:
+[captura de confirmación WordPress](imagenes/wordpress_confirmacion.png)
+[captura de menu inicio WordPress](imagenes/wordpress_menu.png)
 
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
 Para activar el módulo "wsgi" ejecutaremos el comando **"a2enmod"** seguido del nombre del módulo. Antes actualizaremos el sistema:
