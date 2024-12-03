@@ -114,7 +114,6 @@ Para instalar Wordpress primero debemos de tener instalado PHP y MySQL. Como ya 
 ```ubuntu
 $ sudo apt install mysql-server -y
 ```
-
 Una vez instalado,  reiniciaremos nuestro servidor Apache2 con **"systemctl"** y abriremos el terminal de MySQL con el comando **"mysql"**:
 ```ubuntu
 # sudo systemctl restart apache2
@@ -124,12 +123,10 @@ Crearemos nuestra base de datos para wordpress usando la siguiente orden:
 ```mysql
 mysql> CREATE DATABASE WordPress;
 ```
-
 Ahora crearemos un usuario para trabajar con la base de datos:
 ```mysql
 CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'contrasena';
 ```
-
 Y por último asignaremos los permisos al usuario para poder ejecutar cualquier orden SQL, recargaremos la base de datos y saldremos:
 ```mysql
 GRANT ALL PRIVILEGES ON wordpress.* TO 'wp_user'@'localhost';
@@ -144,19 +141,26 @@ $ sudo a2enmod rewrite
 $ sudo apt install wget
 $ sudo apt install unzip
 ```
-
 **Ahora podemos comenzar con la instalación de WordPress.** Primero descargaremos el archivo comprimido de WordPress usando el comando **"wget"** seguido de la dirección web:
 ```ubuntu
 $ sudo wget https://wordpress.org/latest.zip
 ```
-
 Una vez descargado, lo moveremos con el comando **"mv"** al directorio donde queramos alojar WordPress, que en nuestro caso es /var/www/centro_intranet. Una vez movido lo descomprimiremos con el comando **"unzip"**
 ```ubuntu
-$ mv latest.zip /var/www/centro_intranet
+$ sudo mv latest.zip /var/www/centro_intranet
 $ cd /var/www/html
-$ unzip latest.zip
+$ sudo unzip latest.zip
 ```
-
+Ahora moveremos todo lo que se encuentra en la carpeta wordpress al directorio actual con el comando **"mv -r"**. Después de esto eliminaremos el archivo *index.html* con el comando **"rm -rf"**:
+```ubuntu
+$ sudo mv -f wordpress/* ./
+$ sudo rm -rf index.html
+```
+Por último, modificaremos el usuario, grupo y permisos de la carpeta */var/www/centros_intranet* con el comando **"chown"** y **"chmod"**de la siguiente manera:
+```ubuntu
+$ sudo chown -R www-data:www-data /var/www/centros_intranet
+$ sudo chmod -R 755 /var/www/centros_intranet
+```
 
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
 Para activar el módulo "wsgi" ejecutaremos el comando **"a2enmod"** seguido del nombre del módulo. Antes actualizaremos el sistema:
