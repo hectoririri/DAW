@@ -136,9 +136,26 @@ GRANT ALL PRIVILEGES ON wordpress.* TO 'wp_user'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 ```
+Este es el resultado de todos los comandos anteriores: [órdenes sql](imagenes/mysql_wordpress.png)
 
+Activaremos el módulo rewrite con el comando **"a2enmod"**, el paquete **"wget"** y unzip para comenzar con la instalación de WordPress:
+```ubuntu
+$ sudo a2enmod rewrite
+$ sudo apt install wget
+$ sudo apt install unzip
+```
 
+**Ahora podemos comenzar con la instalación de WordPress.** Primero descargaremos el archivo comprimido de WordPress usando el comando **"wget"** seguido de la dirección web:
+```ubuntu
+$ sudo wget https://wordpress.org/latest.zip
+```
 
+Una vez descargado, lo moveremos con el comando **"mv"** al directorio donde queramos alojar WordPress, que en nuestro caso es /var/www/centro_intranet. Una vez movido lo descomprimiremos con el comando **"unzip"**
+```ubuntu
+$ mv latest.zip /var/www/centro_intranet
+$ cd /var/www/html
+$ unzip latest.zip
+```
 
 
 ### Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
