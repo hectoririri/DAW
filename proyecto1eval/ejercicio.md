@@ -4,7 +4,7 @@
 
 
 ### 1. Instalación del servidor web apache. Usaremos dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python
-Para la instalación de apache abriremos un terminal de Ubuntu *(Ctrl+T)* y actualizaremos el sistema con el siguiente comando utilizando **"apt"**. Siempre utilizaremos **"sudo"** de aquí en adelante al necesitar de permisos de administrador.
+Para la instalación de apache abriremos un terminal de Ubuntu *(Ctrl+Alt+T)* y actualizaremos el sistema con el siguiente comando utilizando **"apt"**. Siempre utilizaremos **"sudo"** de aquí en adelante al necesitar de permisos de administrador.
 ```ubuntu
 $ sudo apt update ; sudo apt upgrade
 ```
