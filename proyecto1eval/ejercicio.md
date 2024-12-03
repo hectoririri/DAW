@@ -115,20 +115,29 @@ Para instalar Wordpress primero debemos de tener instalado PHP y MySQL. Como ya 
 $ sudo apt install mysql-server -y
 ```
 
-Una ve instalado, abriremos el terminal de MySQL con el comando **"mysql"**:
+Una vez instalado,  reiniciaremos nuestro servidor Apache2 con **"systemctl"** y abriremos el terminal de MySQL con el comando **"mysql"**:
 ```ubuntu
+# sudo systemctl restart apache2
 $ sudo mysql
 ```
-
-Aquí cambiaremos la contraseña del usuario root a una más segura ejecutando el siguiente comando en la terminal de MySQL:
+Crearemos nuestra base de datos para wordpress usando la siguiente orden: 
 ```mysql
-mysql> CREATE DATABASE WordPressBD DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+mysql> CREATE DATABASE WordPress;
 ```
 
-Ya asegurado nuestro usuario root, crearemos un usuario para operar con la base de datos de Wordpress:
+Ahora crearemos un usuario para trabajar con la base de datos:
 ```mysql
-GRANT ALL ON WordPressBD.* TO ' UsuarioWordPress '@'localhost' IDENTIFIED BY 'NuevaContraseña';
+CREATE USER 'wp_user'@'localhost' IDENTIFIED BY 'contrasena';
 ```
+
+Y por último asignaremos los permisos al usuario para poder ejecutar cualquier orden SQL, recargaremos la base de datos y saldremos:
+```mysql
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wp_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+
 
 
 
