@@ -199,8 +199,20 @@ $ sudo apt install libapache2-mod-wsgi-py3
 ### Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación
 
 
-### Instala y configura awstat.
-
+### Instala y configura awstat. [ayuda](https://www.donwordpress.com/blog/hosting/instalar-awstats-ubuntu-16#4-_Configuracion_de_apache)
+Primero descargaremos los paquetes necesarios para instalar awstat:
+```ubuntu
+$ sudo apt-get install awstats libgeo-ipfree-perl libnet-ip-perl -y
+```
+Una vez descargado, copiaremos la plantilla con el comando **"cp"** que encontramos en la ruta */etc/awstats/awstats.conf* y la pegamos en /etc/awstats/departamentos_centro_intranet.conf. El nombre del fichero que copiamos será el nombre de nuestro dominio, en nuestro caso, departamentos.centro.intranet:
+```ubuntu
+$ sudo cp /etc/awstats/awstats.conf /etc/awstats/departamentos_centro_intranet.conf
+```
+Ahora editaremos este fichero de configuración que hemos copiado con el comando **"nano"** y escribiremos lo siguiente:
+```ubuntu
+$ sudo nano /etc/awstats/departamentos_centro_intranet.conf
+```
+[captura de configuración](imagenes/awstat_configuracion_dominio)
 
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
 
