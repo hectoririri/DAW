@@ -194,10 +194,21 @@ $ sudo apt install libapache2-mod-wsgi-py3
 ```
 
 
+
 ### Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
+Primero crearemos un fichero *.py* para crear nuestra aplicación y ejecutarla más adelante. Utilizaremos el comando **"nano"** directamente:
+```ubuntu
+$ sudo nano /var/www/departamentos_centro_intranet/aplicacion.py
+```
+
+[aplicacion en python](imagenes/python_aplicacion.png)
+
+
+
 
 
 ### Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación
+
 
 
 ### Instala y configura awstat. [ayuda](https://www.donwordpress.com/blog/hosting/instalar-awstats-ubuntu-16#4-_Configuracion_de_apache)
