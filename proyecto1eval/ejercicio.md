@@ -213,7 +213,7 @@ Ahora editaremos este fichero de configuración que hemos copiado con el comando
 ```ubuntu
 $ sudo nano /etc/awstats/departamentos_centro_intranet.conf
 ```
-[captura de configuración](imagenes/awstat_configuracion_dominio)
+[captura de configuración](imagenes/awstat_configuracion_dominio.png)
 Al configurar este archivo lo copiaremos con **"cp"** en la misma carpeta pero con *"www."* al principio del archivo ya que AWstats distingue el www:
 ```ubuntu
 $ cp /etc/awstats/$DOMINIO.conf /etc/awstats/www.$DOMINIO.conf
