@@ -193,6 +193,7 @@ En caso de que no lo tengamos instalado, podremos hacerlo ejecutando el comando 
 $ sudo apt install libapache2-mod-wsgi-py3
 ```
 
+
 ### Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
 
 
@@ -213,6 +214,29 @@ Ahora editaremos este fichero de configuración que hemos copiado con el comando
 $ sudo nano /etc/awstats/departamentos_centro_intranet.conf
 ```
 [captura de configuración](imagenes/awstat_configuracion_dominio)
+Al configurar este archivo lo copiaremos con **"cp"** en la misma carpeta pero con *"www."* al principio del archivo ya que AWstats distingue el www:
+```ubuntu
+$ cp /etc/awstats/$DOMINIO.conf /etc/awstats/www.$DOMINIO.conf
+```
+A continuación, configuraremos el archivo de configuración de apache2 *(/etc/apache2/apache2.conf)* con el comando **"nano"** para poder acceder a la página de AWstats:
+```ubuntu
+Alias /awstatsclasses "/usr/share/awstats/lib/"
+Alias /awstats-icon/ "/usr/share/awstats/icon/"
+Alias /awstatscss "/usr/share/doc/awstats/examples/css"
+ScriptAlias /statistics/ /usr/lib/cgi-bin/
+Redirect /awstats /statistics/awstats.pl
+Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+```
+[captura de fichero de configuración apache2.conf](imagenes/awstats_apache2_conf.png)
+Por último, habilitaremos el módulo **"cgi"** y reiniciaremos nuestro servidor Apache2 con **"systemctl"** e ingresaremos en la siguiente ruta de nuestro dominio para acceder al AWstats de nuestro dominio:
+```ubuntu
+$ sudo a2enmod cgi
+$ sudo systemctl restart apache2
+```
+[captura de awstats en dominio departamentos.centro.intranet](imagenes/awstats_funcionando.png)
+
+
+
 
 ### Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
 
