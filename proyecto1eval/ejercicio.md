@@ -196,12 +196,25 @@ $ sudo apt install libapache2-mod-wsgi-py3
 
 
 ### Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
-Primero crearemos un fichero *.py* para crear nuestra aplicación y ejecutarla más adelante. Utilizaremos el comando **"nano"** directamente:
+Primero crearemos el fichero *.py* que usaremos para crear nuestra aplicación y ejecutarla más adelante. Utilizaremos el comando **"nano"** directamente:
 ```ubuntu
-$ sudo nano /var/www/departamentos_centro_intranet/aplicacion.py
+$ sudo nano /var/www/html/wsgy.py
 ```
 
 [aplicacion en python](imagenes/python_aplicacion.png)
+
+A continuación, damos los permisos adecuados al archivo *wsgi.py* con el comando **"chown"** y **"chmod"**:
+```ubuntu
+$ sudo chown www-data:www-data /var/www/html/wsgy.py
+$ sudo chmod 755 /var/www/html/wsgy.py
+```
+
+Ahora configuraremos el archivo de configuración de este 
+
+[captura de configuración dominio python](imagenes/python_dominio.png)
+
+
+
 
 
 
