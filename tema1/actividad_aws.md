@@ -17,6 +17,31 @@ Estando en el apartado de instancias, lanzaremos una pulsando sobre **"Lanzar in
 
 [Imagen lanzando una instancia](/tema1/imagenes/aws_lanzando_instancia.png)
 
+La configuración de la instancia es la siguiente: (cambié el tamaño de almacenamiento a 8gb y el tipo de instancia a t2.medium porque no tenía permisos para usarlo)
+
++ [Imagen configuración de instancia 1](/tema1/imagenes/aws_configuracion_instancia1.png)
+
++ [Imagen configuración de instancia 2](/tema1/imagenes/aws_configuracion_instancia2.png)
+
++ [Imagen configuración de instancia 3](/tema1/imagenes/aws_configuracion_instancia3.png)
+
+Una vez finalice la instancia, veremos la siguiente pantalla de confirmación:
+
+[Imagen confirmación de instancia](/tema1/imagenes/aws_confirmacion_instancia.png)
+
+Volveremos al apartado de las instancias para seleccionar la que creamos y conectarnos a ella. Una vez seleccionada marcando un checkbox pulsaremos sobre **"Conectar"**:
+
+[Imagen cómo conectarse, la ruta, a una instancia](/tema1/imagenes/aws_como_conectar.png)
+
+Nos saltará una nueva ventana donde configuraremos la forma en la que queramos conectarnos y lo haremos desde el navegador de la siguiente manera:
+
+[Imagen conectándose a una instancia](/tema1/imagenes/aws_como_conectar.png)
+
+Una vez nos conectemos, veremos que saltará una nueva ventana en la que veremos un simulador de la terminal de linux de nuestra instancia. Desde aquí realizaremos las siguientes actividades:
+
+[Imagen conectado a instancia desde navegador](/tema1/imagenes/aws_conectado_instancia.png)
+
+
 # Activar la autenticación con MySql
 Primero instalaremos MySQL con el siguiente comando:
 ```ubuntu
