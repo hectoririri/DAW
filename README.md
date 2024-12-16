@@ -16,6 +16,7 @@ Ejercicio | Descripción
 [ejercicio 1](/tema1/ejercicio1.md) | Script que añade un puerto de escucha en el fichero de configuración de Apache
 [ejercicio 2](/tema1/ejercicio2.md) | Script que añade un nombre de dominio y una ip al fichero hosts
 [ejercicio 3](/tema1/ejercicio3.md) | Script que nos permita crear una página web con un título, una cabecera y un mensaje
+[Actividad AWS](/tema1/actividad_aws.md) | Script que nos permita crear una página web con un título, una cabecera y un mensaje
 
 ## PROYECTO 1º Evaluación
 Proyecto de 1º Evaluación donde configuramos nuestro servidor Apache
