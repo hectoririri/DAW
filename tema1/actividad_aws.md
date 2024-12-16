@@ -1,5 +1,18 @@
 ## Ejercicio AWS
 
+# Crear instancia en AWS
+Para crear una instancia en AWS iniciaremos sesión en este y seguiremos la siguiente ruta para llegar al laboratorio:
+[Imagen ruta a seguir para entrar en el laboratorio](/tema1/imagenes/aws_ruta_laboratorio.png)
+
+Una vez lleguemos aquí tendremos que iniciarlo para poder acceder a nuestro menú y lanzar nuestras instancias. Para lanzarlo pulsaremos sobre **"Start Lab"**, y una vez el icono de la izquierda cambie a verde haremos click sobre este para acceder al menú y las instancias:
+[Imagen lanzar el laboratorio](/tema1/imagenes/aws_iniciando_laboratorio.png)
+
+Al haber hecho click sobre el icono de AWS, volveremos a seguir la siguiente ruta para llegar al apartado de instancias y poder lanzar una:
+[Imagen ruta a seguir para entrar en las instancias](/tema1/imagenes/aws_ruta_instancias.png)
+
+Estando en el apartado de instancias, lanzaremos una pulsando sobre **"Lanzar instancias"** y configuraremos nuestra instancia en el siguiente apartado:
+[Imagen lanzando una instancia](/tema1/imagenes/aws_lanzando_instancia.png)
+
 # Activar la autenticación con MySql
 Primero instalaremos MySQL con el siguiente comando:
 ```ubuntu
