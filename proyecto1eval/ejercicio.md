@@ -224,7 +224,7 @@ Ahora configuraremos el archivo de configuración de este
 
 
 
-### Instala y configura awstat. [ayuda](https://www.donwordpress.com/blog/hosting/instalar-awstats-ubuntu-16#4-_Configuracion_de_apache)
+### Instala y configura awstat.
 Primero descargaremos los paquetes necesarios para instalar awstat:
 ```ubuntu
 $ sudo apt-get install awstats libgeo-ipfree-perl libnet-ip-perl -y
