@@ -35,7 +35,7 @@ Volveremos al apartado de las instancias para seleccionar la que creamos y conec
 
 Nos saltará una nueva ventana donde configuraremos la forma en la que queramos conectarnos y lo haremos desde el navegador de la siguiente manera:
 
-[Imagen conectándose a una instancia](/tema1/imagenes/aws_como_conectar.png)
+[Imagen conectándose a una instancia](/tema1/imagenes/aws_conectandose_instancia.png)
 
 Una vez nos conectemos, veremos que saltará una nueva ventana en la que veremos un simulador de la terminal de linux de nuestra instancia. Desde aquí realizaremos las siguientes actividades:
 
