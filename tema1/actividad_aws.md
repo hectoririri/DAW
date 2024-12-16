@@ -1,29 +1,40 @@
-## Ejercicio 3
+## Ejercicio AWS
 
-# Crea un script que nos permita crear una página web con un título, una cabecera y un mensaje
-
-Volveremos a ingresar a la carpeta de **"mis_scripts"** y crearemos nuestro último script. Ejecutaremos el comando **"touch"** seguido de ***script3.sh***.
+# Activar la autenticación con MySql
+Primero instalaremos MySQL con el siguiente comando:
 ```ubuntu
-sudo touch script3.sh
+sudo apt install mysql-server
 ```
-Ahora modificaremos los permisos del script con **"chmod"** y los establecemos a 755.
+Y ahora instalaremos el módulo de autenticación de MySQL para Apache2:
 ```ubuntu
-sudo chmod 755 script3.sh
+sudo apt install libapache2-mod-auth-mysql
 ```
-Editaremos el código del script con el editor de texto **"nano"** y escribiremos el siguiente código. Guardamos con Ctrl+O y Enter.
+Activaremos ahora sí el módulo de autenticación MySQL usando **"a2enmod"**:
 ```ubuntu
-sudo nano script3.sh
+sudo a2enmod auth_mysql
 ```
-[Imagen código script3.sh](/tema1/imagenes/script3.png)
 
-Ejecutaremos el script de diferentes maneras para comprobar que el código funciona correctamente:
+Una vez habilitado, configuraremos el archivo de configuración de Apache2 para declarar la configuración de autenticación con MySQL. Para esto lo indicaremos en el archivo de configuración **"/etc/apache2/sites-available/000-default.conf"** usando el comando **"nano"** e introduciendo lo siguiente:
 ```ubuntu
-sudo ./script3.sh 
+sudo nano install /etc/apache2/sites-available/000-default.conf
 ```
-[Imagen pruebas script3.sh](/tema1/imagenes/script3ejecutado.png)
+[Imagen archivo configuración Apache2 autenticación MySQL](/tema1/imagenes/apache_autenticación_MySQL.png)
+<Directory /var/www/html>
+    AuthType Basic
+    AuthName "Restricted Content"
+    AuthBasicProvider mysql
+    AuthMySQLHost localhost
+    AuthMySQLUser your_mysql_user
+    AuthMySQLPassword your_mysql_password
+    AuthMySQLDB your_database
+    AuthMySQLUserTable your_user_table
+    AuthMySQLNameField username
+    AuthMySQLPasswordField password
+    Require valid-user
+</Directory>
 
-Ahora, el código genera una página html con los argumentos que el usuario le pase al ejecutar el **"script3.sh"**. Aquí podemos ver una visualización de la página web:
 
-[Imagen página web script3.sh](/tema1/imagenes/script3html.png)
 
-Documentación a parte de la moodle para el comando cat ODF: https://blog.pachahosting.com/como-escribir-texto-en-un-archivo-usando-el-comando-linux-cat/
+
+
+# Crear un certificado autofirmado y activar el módulo SSL
