@@ -33,8 +33,16 @@ sudo nano install /etc/apache2/sites-available/000-default.conf
     Require valid-user
 </Directory>
 
-
-
+Por último, reiniciaremos el servidor de Apache2 con **"systemctl"**
+```ubuntu
+sudo systemctl restart apache2
+```
 
 
 # Crear un certificado autofirmado y activar el módulo SSL
+Primero crearemos una carpeta en la que almacenaremos nuestro certificado autofirmado para organizarlo
+
+```ubuntu
+sudo mkdir /etc/apache2/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+```
