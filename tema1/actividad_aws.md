@@ -43,7 +43,7 @@ Una vez nos conectemos, veremos que saltará una nueva ventana en la que veremos
 
 
 # Activar la autenticación con MySql
-Primero instalaremos MySQL con el siguiente comando:
+Damos por hecho que Apache2 está instalado en nuestra instancia, ya que se explicó en el otro proyectó. Primero instalaremos MySQL con el siguiente comando:
 ```ubuntu
 sudo apt install mysql-server
 ```
