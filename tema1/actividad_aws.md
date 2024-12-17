@@ -45,46 +45,59 @@ Una vez nos conectemos, veremos que saltará una nueva ventana en la que veremos
 # Activar la autenticación con MySql
 Damos por hecho que Apache2 está instalado en nuestra instancia, ya que se explicó en el otro proyectó. Primero instalaremos MySQL con el siguiente comando:
 ```ubuntu
-sudo apt install mysql-server
+$ sudo apt install mysql-server
 ```
 Y ahora instalaremos el módulo de autenticación de MySQL para Apache2:
 ```ubuntu
-sudo apt install libapache2-mod-auth-mysql
+$ sudo apt-get install libaprutil1-dbd-mysql
 ```
 Activaremos ahora sí el módulo de autenticación MySQL usando **"a2enmod"**:
 ```ubuntu
-sudo a2enmod auth_mysql
+$ sudo a2enmod dbd
+$ sudo a2enmod authn_dbd
 ```
+[Imagen activando los modulos](/tema1/imagenes/aws_activando_modulos.png)
 
-Una vez habilitado, configuraremos el archivo de configuración de Apache2 para declarar la configuración de autenticación con MySQL. Para esto lo indicaremos en el archivo de configuración **"/etc/apache2/sites-available/000-default.conf"** usando el comando **"nano"** e introduciendo lo siguiente:
+
+Una vez habilitado los modulos, configuraremos el archivo de configuración de Apache2 (el del sitio web que usaremos) para declarar la configuración de autenticación con MySQL. Para esto lo indicaremos en el archivo de configuración **"/etc/apache2/sites-available/000-default.conf"** (en este caso) y usando el comando **"nano"** introduciendo lo siguiente:
 ```ubuntu
-sudo nano install /etc/apache2/sites-available/000-default.conf
+$ sudo nano /etc/apache2/sites-available/000-default.conf
 ```
-[Imagen archivo configuración Apache2 autenticación MySQL](/tema1/imagenes/apache_autenticación_MySQL.png)
-<Directory /var/www/html>
-    AuthType Basic
-    AuthName "Restricted Content"
-    AuthBasicProvider mysql
-    AuthMySQLHost localhost
-    AuthMySQLUser your_mysql_user
-    AuthMySQLPassword your_mysql_password
-    AuthMySQLDB your_database
-    AuthMySQLUserTable your_user_table
-    AuthMySQLNameField username
-    AuthMySQLPasswordField password
-    Require valid-user
-</Directory>
+[Imagen archivo configuración Apache2 autenticación MySQL](/tema1/imagenes/aws_apache_autenticación_MySQL.png)
 
 Por último, reiniciaremos el servidor de Apache2 con **"systemctl"**
 ```ubuntu
-sudo systemctl restart apache2
+$ sudo systemctl restart apache2
 ```
 
 
 # Crear un certificado autofirmado y activar el módulo SSL
-Primero crearemos una carpeta en la que almacenaremos nuestro certificado autofirmado para organizarlo
-
+Primero instalaremos la librería criptográfica de **"openssl"**, que es la que usaremos para crear nuestro certificado:
 ```ubuntu
-sudo mkdir /etc/apache2/ssl
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+$ sudo apt install openssl
 ```
+
+Ahora crearemos una carpeta en la que almacenaremos nuestro certificado autofirmado para organizarlo mejor. En esta carpeta crearemos nuestro certificado que durará 365 días, con el sistema criptográfico rsa:2048 y demás parámetros que tendremos que rellenar mientras generamos la clave:
+```ubuntu
+$ sudo mkdir /etc/apache2/ssl
+$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+```
+[Imagen creación de certificado autofirmado](/tema1/imagenes/aws_apache_creacion_certificado_autofirmado.png)
+
+Después de crear nuestro certificado, habilitaremos el módulo y sitio de SSL:
+```ubuntu
+$ sudo a2enmod ssl
+$ sudo a2ensite default-ssl
+```
+
+Ahora configuraremos el archivo de configuración de Apache2 para habilitar el funcionamiento de SSL. Para esto añadiremos lo siguiente:
+```ubuntu
+$ sudo nano /etc/apache2/sites-available/000-default.conf
+```
+[Imagen archivo configuración Apache2 certificado autofirmado](/tema1/imagenes/aws_apache_certificado_autofirmado.png)
+
+Por último, reiniciaremos el servidor de Apache2 con el comando **"systemctl"**:
+```ubuntu
+$ sudo systemctl restart apache2
+```
+
