@@ -1,4 +1,4 @@
-# 1º Creación de VPC
+![imagen](https://github.com/user-attachments/assets/94866744-11e8-4c14-ad4a-fb7480539280)# 1º Creación de VPC
 
 Primero tenemos que crear la estructura de nuestra red, donde incluiremos las diferentes instancias y servidores EFS y RDS. Nuestra VPC constará de 4 subredes; 2 públicas y 2 privadas. 
 Para crearlas entraremos a nuestro labotario de AWS y buscaremos la opción **"VPC"** en el buscador e ingresaremos en el siguiente resultado:
@@ -111,6 +111,29 @@ $ sudo systemctl status apache2
 Con esto habremos terminado la configuración de Apache y PHP en nuestra instancia EC2.
 
 # 4º Creación de la base de datos
+
+Ahora nos moveremos al apartado de AWS e introduciremos en el buscador **"RDS"** y entraremos en el siguiente resultado:
+![imagen](https://github.com/user-attachments/assets/7bdcccf9-2f0f-4fa6-a04c-3a4603749e28)
+
+Una vez aquí, nos moveremos a la sección de **"Bases de datos"** y pulsaremos sobre **"Crear base de datos"**
+![imagen](https://github.com/user-attachments/assets/287288b6-b7f8-4a34-aa60-8dbacc380df4)
+
+Ahora configuraremos la base de dato de la siguiente manera:
+1/7![imagen](https://github.com/user-attachments/assets/502bf3e6-243c-456e-881f-31b1fae1c831)
+2/7![imagen](https://github.com/user-attachments/assets/172ccca7-132c-4701-b325-6cf4ae4e1017)
+3/7![imagen](https://github.com/user-attachments/assets/aa0a9edc-fa85-4216-88fc-c06ea37b7ab0)
+4/7![imagen](https://github.com/user-attachments/assets/9ae17bb4-5904-4a09-8442-b78c9c9de4b7)
+5/7![imagen](https://github.com/user-attachments/assets/be212f57-0b02-43f0-8f7b-a91f6f070c7a)
+6/7![imagen](https://github.com/user-attachments/assets/b3b1639a-00a3-4ea6-b7a3-9526fe177363)
+7/7![imagen](https://github.com/user-attachments/assets/9eec5e38-d978-4df2-88b7-fc6464817806)
+
+Hemos metido la base de datos en los mismos grupos de seguridad en los que se encuentra nuestra instancia EC2, por lo tanto no tenemos que configurar el grupo de seguridad de nuestra instancia RDS para que pueda conectarse a la instancia EC2.
+
+Ahoras
+
+
+
+
 
 
 
