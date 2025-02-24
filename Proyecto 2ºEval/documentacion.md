@@ -37,10 +37,18 @@ Ahora introduciremos los siguientes datos a la hora de crear nuestra EC2 para as
 
 5/5![image](https://github.com/user-attachments/assets/76fdad14-6d4a-41c0-aabc-d86aae6aadb4)
 
-Una vez pulsado sobre **"Lanzar instancia"** podremos ver el proceso de creación de nuestra EC2 y la confirmación de esta. Si queremos visualizarla pulsaremos sobre **"Ver todas las instancias"**
+Una vez pulsado sobre **"Lanzar instancia"** podremos ver el proceso de creación de nuestra EC2 y la confirmación de esta. Para visualizarla pulsaremos sobre **"Ver todas las instancias"**
 
 ![image](https://github.com/user-attachments/assets/df8f4fd5-9c26-4126-8c31-2f177908b4fe)
 
+Una vez aquí, marcaremos el checkbox de nuestra EC2 para conectarnos a ella pulsando después sobre **"Conectar"**:
+![imagen](https://github.com/user-attachments/assets/febf1479-6589-420d-8d05-0885d1347e28)
+
+Aquí seleccionaremos la manera en la que nos conectaremos a nuestra instancia EC2. Elegiremos la conexión por navegador y el nombre de usuario por defecto, que es ubuntu, y pulsaremos sobre **"Contectar"**:
+![imagen](https://github.com/user-attachments/assets/965fcb24-54c4-4093-8d98-f3d60e67636f)
+
+Se nos abrirá una pestaña nueva donde tendremos la terminal de nuestra instancia. Aquí procederemos con la instalación de PHP y Apache.
+![imagen](https://github.com/user-attachments/assets/4536bf98-1782-4f91-9a38-3efaf4b01d7d)
 
 
 
