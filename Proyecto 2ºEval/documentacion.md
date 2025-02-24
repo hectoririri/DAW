@@ -50,6 +50,34 @@ Aquí seleccionaremos la manera en la que nos conectaremos a nuestra instancia E
 Se nos abrirá una pestaña nueva donde tendremos la terminal de nuestra instancia. Aquí procederemos con la instalación de PHP y Apache.
 ![imagen](https://github.com/user-attachments/assets/4536bf98-1782-4f91-9a38-3efaf4b01d7d)
 
+# 3º Instalación Apache y PHP
+
+
+Para instalar nuestro servidor Apache, primero actualizaremos nuestro sistema y ejecutaremos los siguientes comandos para la instalación y comprobación de que esta misma se realizó con éxito:
+```ubuntu
+$ sudo apt update ; sudo apt upgrade
+$ sudo install apache2
+$ sudo apache2 -v
+```
+1/2![imagen](https://github.com/user-attachments/assets/93018a27-4bcc-4b76-b24b-417354db894b)
+2/2![imagen](https://github.com/user-attachments/assets/1c5ba51d-6efc-49fd-9216-bff16538b055)
+
+Una vez la instalación se haya completado, ejecutaremos el siguiente comando para levantar el servidor y el posterior que hará que Apache se inicie cada vez que se arranca la instancia
+```ubuntu
+$ sudo systemctl start apache2
+$ sudo systemctl enable apache2
+```
+![imagen](https://github.com/user-attachments/assets/5f4ac9ec-055b-42b9-98e6-1946fee2a0fc)
+![imagen](https://github.com/user-attachments/assets/d68cd65d-d290-4c76-ad1a-22e6ede68ad7)
+
+
+Para acceder a este desde internet, debemos de escribir en nuestro navegador la dirección IP pública. Esta la encontraremos en la información de nuestra instancia EC2:
+1/2![imagen](https://github.com/user-attachments/assets/2989e20c-d723-47a9-ab7e-f2dd84b635d6)
+2/2![imagen](https://github.com/user-attachments/assets/8659a2a6-00fb-4338-9dde-4b1787dae3d8)
+
+## PHP
+Para la instalación de PHP 
+
 
 
 paquete linux para conectar con efs -> apt-get install nfs-common
