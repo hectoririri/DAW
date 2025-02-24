@@ -76,7 +76,42 @@ Para acceder a este desde internet, debemos de escribir en nuestro navegador la 
 2/2![imagen](https://github.com/user-attachments/assets/8659a2a6-00fb-4338-9dde-4b1787dae3d8)
 
 ## PHP
-Para la instalación de PHP 
+Para la instalación de PHP, primero debemos comprobar que el paquete amazon-linux-extras ya está instalado en nuestro servidor con el siguiente comando. En mi caso ya lo está:
+```ubuntu
+$ sudo apt -y update && sudo apt upgrade
+```
+![imagen](https://github.com/user-attachments/assets/3e9f7692-f76c-415d-933f-d5e2ae8a8210)
+
+Ahora instalaremos PHP mediante un módulo de Apache2. El comando que ejecutaremos para instalar la versión más reciente será el siguiente:
+```ubuntu
+sudo apt install php libapache2-mod-php php-cli
+```
+Podemos ver como los paquetes que vamos a instalar de PHP se refieren a la versión 8.3:
+![imagen](https://github.com/user-attachments/assets/0bb37a0a-f2b7-4e23-9ef4-b3cac19e7c78)
+
+Para confirmar la instalación de este ejecutaremos el siguiente comando:
+```ubuntu
+$ php -v
+```
+![imagen](https://github.com/user-attachments/assets/2f3eabf7-3400-4814-a8ff-52fa788db645)
+
+Ahora instalaremos MySQL como módulo de apache, por lo tanto ejecutaremos el siguiente comando:
+```ubuntu
+$ sudo apt install php-mysql
+```
+![imagen](https://github.com/user-attachments/assets/9b91b0cd-22a7-4f2c-b307-5d2fc2ce321a)
+
+Una vez terminada la instalación, reiniciaremos el servidor de Apache y comprobaremos su funcionamiento con los siguientes comandos:
+```ubuntu
+$ sudo systemctl restart apache2
+$ sudo systemctl status apache2
+```
+![imagen](https://github.com/user-attachments/assets/e23ac01c-1810-41f8-811b-dd394f28e63c)
+
+Con esto habremos terminado la configuración de Apache y PHP en nuestra instancia EC2.
+
+# 4º Creación de la base de datos
+
 
 
 
