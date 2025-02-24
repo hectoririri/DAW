@@ -8,11 +8,39 @@ Ahora entraremos en el apartado de **"Sus VPC"** para crear el nuestro propio. P
 ![image](https://github.com/user-attachments/assets/e24f599c-cf5c-43f4-8d8e-92eff47a801f)
 
 Una vez aquí, ingresaremos los siguientes datos para crear nuestra VPC:
-![image](https://github.com/user-attachments/assets/f71e20d0-10ed-4821-8693-44f6818f83ed)
-![image](https://github.com/user-attachments/assets/c1d6efcd-211f-48b1-95d4-9f5c020f5261)
+
+1/1![image](https://github.com/user-attachments/assets/f71e20d0-10ed-4821-8693-44f6818f83ed)
+1/2![image](https://github.com/user-attachments/assets/c1d6efcd-211f-48b1-95d4-9f5c020f5261)
 
 Ahora podremos ver la pantalla de confirmación de la creación del VPC. Podemos verla si entramos en **"Ver VPC"**:
 ![image](https://github.com/user-attachments/assets/7b6101b8-b42b-48b5-bf59-927f2c46fa9a)
+
+# 2º Creación de EC2
+
+Ahora crearmos nuestra instancia donde alojaremos nuestro servidor Apache 2 y Wordpress. Para ello escribiremos en el buscador **"EC2"** e ingresaremos en el siguiente resultado:
+
+![image](https://github.com/user-attachments/assets/074562b3-5452-4b92-8335-18ccb3dbbbab)
+
+Para lanzar una instancia, primero entraremos en el apartado de estas para visualizarlas y crearlas. Entraremos **"Instancias"** para lanzar una pulsando sobre **"Lanzar instancias"**:
+
+![image](https://github.com/user-attachments/assets/a3c39190-d49c-4c6a-bb12-761c933a1caa)
+
+Ahora introduciremos los siguientes datos a la hora de crear nuestra EC2 para así poder conectarnos a esta, incluirla en nuestra VPC, etc...
+
+1/5![image](https://github.com/user-attachments/assets/a5bc3563-7a1e-446a-875f-a41da454c583)
+
+2/5![image](https://github.com/user-attachments/assets/2615911e-2057-48bc-94b2-9f12944c58a9)
+
+3/5![image](https://github.com/user-attachments/assets/85981ba0-109d-400d-8769-1df5d4585000)
+
+4/5![image](https://github.com/user-attachments/assets/97f430c1-3408-4f78-9f92-fbd5d466c0d3)
+
+5/5![image](https://github.com/user-attachments/assets/76fdad14-6d4a-41c0-aabc-d86aae6aadb4)
+
+Una vez pulsado sobre **"Lanzar instancia"** podremos ver el proceso de creación de nuestra EC2 y la confirmación de esta. Si queremos visualizarla pulsaremos sobre **"Ver todas las instancias"**
+
+![image](https://github.com/user-attachments/assets/df8f4fd5-9c26-4126-8c31-2f177908b4fe)
+
 
 
 
