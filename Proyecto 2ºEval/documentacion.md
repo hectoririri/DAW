@@ -189,5 +189,26 @@ $ mkdir miefs
 Ahora pegaremos el comando que copiamos anteriormente para conectar la instancia EC2 con la EFS cambiando la carpeta final por la que hemos creado:
 ![imagen](https://github.com/user-attachments/assets/35d4d36a-ffa0-4a55-800a-9f2f6f552eff)
 
+Podemos ver que ya se ha montado correctamente al no saltar ningún error al ejecutar el comando. Hemos terminado con la configuración de la EFS.
+
+# 6º Instalación Wordpress
+Ahora procederemos con la instalación de Wordpress. Nos moveremos al directorio */var/www/html* para descargar el archivo comprimido de Wordpress y descomprimirlo en el mismo sitio. Ejecutaremos los siguientes comandos:
+```ubuntu
+$ cd /var/www/html
+$ sudo wget http://wordpress.org/latest.tar.gz
+$ sudo tar -xf latest.tar.gz
+```
+Una vez ejecutado los comandos, el directorio debería de quedar tal que así:
+![imagen](https://github.com/user-attachments/assets/4061375b-c8c7-481a-bea5-8ee27efb9e02)
+
+A continuación crearemos un usuario y contraseña para Wordpress. Para ello primero descargaremos el cliente de mysql para poder conectarnos. Ejectuaremos el siguiente comando:
+```ubuntu
+$ apt install default-mysql-client
+```
+![imagen](https://github.com/user-attachments/assets/8624d8c8-6058-497a-b472-71e0b3efea18)
+
+Nos iremos al menú de RDS para copiar el punto de enlace y conectarnos a la base de datos ERS que creamos anteriormente. Aquí buscaremos nuestra base de datos y nos iremos al siguiente apartado para copiar lo siguiente:
+![imagen](https://github.com/user-attachments/assets/f7a1291d-50ab-49a5-a292-5be4ccec8dee)
+
 
 
