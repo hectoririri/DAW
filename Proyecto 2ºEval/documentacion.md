@@ -123,21 +123,71 @@ Ahora configuraremos la base de dato de la siguiente manera:
 2/7![imagen](https://github.com/user-attachments/assets/172ccca7-132c-4701-b325-6cf4ae4e1017)
 3/7![imagen](https://github.com/user-attachments/assets/aa0a9edc-fa85-4216-88fc-c06ea37b7ab0)
 4/7![imagen](https://github.com/user-attachments/assets/9ae17bb4-5904-4a09-8442-b78c9c9de4b7)
-5/7![imagen](https://github.com/user-attachments/assets/be212f57-0b02-43f0-8f7b-a91f6f070c7a)
+5/7![imagen](https://github.com/user-attachments/assets/5c6c4d28-b36d-421c-9a68-722cdb59b8c7)
 6/7![imagen](https://github.com/user-attachments/assets/b3b1639a-00a3-4ea6-b7a3-9526fe177363)
 7/7![imagen](https://github.com/user-attachments/assets/9eec5e38-d978-4df2-88b7-fc6464817806)
 
-Hemos metido la base de datos en los mismos grupos de seguridad en los que se encuentra nuestra instancia EC2, por lo tanto no tenemos que configurar el grupo de seguridad de nuestra instancia RDS para que pueda conectarse a la instancia EC2.
+Ahora debemos de configurar los grupos de seguridad para que podamos conectarnos a la base de datos desde la instancia EC2. Para ello, usaremos el asistente que se encargará de establecer los permisos necesarios en los grupos de seguridad entre ambas máquinas. Marcaremos el checkbox seleccionando nuestra base de datos y pulsaremos sobre **"Acciones"** -> **"Configurar la conexión de EC2"**:
+![imagen](https://github.com/user-attachments/assets/874204cf-7e77-4229-9aae-77afdfe41cfb)
 
-Ahoras
+En la nueva ventana, seleccionaremos nuestra instancia EC2 Apache que configuramos anteriormente:
+![imagen](https://github.com/user-attachments/assets/8e0818dc-01dd-4ca6-b996-93b1103da360)
+
+Confirmaremos la conexión entre ambas máquinas pulsando sobre **"Configurar"**:
+![imagen](https://github.com/user-attachments/assets/b1ed3d99-b472-438c-9143-94124bc107bd)
+
+Podemos entrar en la configuración de nuestra base de datos y anotar el punto de enlace de esta que usaremos más adelante a la hora de configurar wordpress:
+![imagen](https://github.com/user-attachments/assets/2a27b70b-96f7-480f-acce-4e7445db3ed0)
+
+Ya hemos terminado de configurar nuestra base de datos.
+
+# 5º Elastic File System (EFS)
+Ahora vamos a crear el sistema de almacenamiento externo que vamos a conectar con la instancia, y más tarde configuraremos para que se conecte en Wordpress también. Para crearlo, debemos de ir al buscador de AWS y escribir **"EFS"** y entrar en el siguiente resultado:
+![imagen](https://github.com/user-attachments/assets/adacf487-36a6-42a8-95c6-90d59724edf1)
+
+Una vez hayamos entrado, pulsaremos sobre **"Crear un sistema de archivos"** para comenzar con la creación de nuestro EFS:
+![imagen](https://github.com/user-attachments/assets/f87ef306-17f2-4299-961d-a926217fd514)
+
+Ahora asignaremos un nombre a este y la VPC en la que se podrán conectar nuestras instancias, en este caso, la que creamos el principio:
+![imagen](https://github.com/user-attachments/assets/a0af3d60-3d52-4e99-b8a9-a13e0b417fc4)
+
+Ya creado, entraremos en la configuración de nuestro EFS *haciendo click en su nombre* y confirmaremos que se ha montado en las subredes correspondientes de nuestro VPC:
+![imagen](https://github.com/user-attachments/assets/14131e6a-6296-427b-9c19-a73462e845df)
+
+Ahora permitiremos la entrada de conexión de nuestra instancia EC2 añadiendo el grupo de seguridad de este a la instanacia EFS. Para ello pulsaremos sobre **"Administrar"** en la pantalla anterior. Una vez aquí, añadiremos en ambas zonas de disponibilidad el grupo de seguridad al que pertence la instancia EC2. En la información de nuestra EC2 aparece de la siguiente manera:
+![imagen](https://github.com/user-attachments/assets/62cf64c8-a149-4cd5-9592-64ea1174bbef)
+
+Añadiremos el grupo de seguridad en la instancia EFS de la siguiente manera:
+![imagen](https://github.com/user-attachments/assets/9ed9063d-3ad0-43d9-b612-5faa6a6c1d38)
+
+Ahora incluiremos la conexión EFS en las reglas del grupo de seguridad en el que se encuentra la instancia EC2. Así las conexiones a la EFS podrán realizarse. Para ello nos iremos al menú de VPC y en concreto al apartado de **"Grupos de seguridad"**. Aquí buscaremos el grupo de seguridad que añadimos en la EFS para modificarlo en el buscador y entraremos a este: 
+![imagen](https://github.com/user-attachments/assets/d574e270-3f61-4d6e-9198-7dd41d6af039)
+
+Aquí editaremos las reglas de entrada para permitir la procediente desde una conexión EFS. Entraremos en en **"Editar reglas de entrada"**:
+![imagen](https://github.com/user-attachments/assets/5b703c0d-bebe-4ca9-8fd6-758f2590b556)
+
+Aquí añadiremos una nueva regla que permita las entradas tipo **"EFS"** desde cualquier IP. Pulsaremos sobra **"Guardar reglas"**:
+![imagen](https://github.com/user-attachments/assets/69d22add-bce4-4b10-8a90-f91b268f2dd2)
 
 
+Ahora vincularemos la instancia EC2 con la instancia EFS. Para ello, iremos a la instancia EFS y entraremos en los detalles de esta haciendo click sobre su nombre. 
+![imagen](https://github.com/user-attachments/assets/2389cbd9-041b-4fc7-9eda-6a87515d6f9e)
 
+Una vez en los detalles de esta, pulsaremos sobre **"Asociar"** y copiaremos el la siguiente línea:
+![imagen](https://github.com/user-attachments/assets/66ecf464-c21a-4fb2-b71d-5375a985bcfc)
 
+Una vez copiada al línea, nos moveremos a la terminal de nuestra instancia EC2. Aquí instalaremos el siguiente paquete antes de hacer la conexión:
+```ubuntu
+$ apt-get install nfs-common
+```
+![imagen](https://github.com/user-attachments/assets/94d33319-0d9c-47a2-918d-e3acee65da7d)
 
+Crearemos la carpeta en la que almacenaremos los archivos que se encuentren en la EFS, para ello ejecutaremos el siguiente comando:
+```ubuntu
+$ mkdir miefs
+```
+Ahora pegaremos el comando que copiamos anteriormente para conectar la instancia EC2 con la EFS cambiando la carpeta final por la que hemos creado:
+![imagen](https://github.com/user-attachments/assets/35d4d36a-ffa0-4a55-800a-9f2f6f552eff)
 
-
-
-paquete linux para conectar con efs -> apt-get install nfs-common
 
 
