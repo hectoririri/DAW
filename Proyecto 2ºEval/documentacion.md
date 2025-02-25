@@ -210,5 +210,21 @@ $ apt install default-mysql-client
 Nos iremos al menú de RDS para copiar el punto de enlace y conectarnos a la base de datos ERS que creamos anteriormente. Aquí buscaremos nuestra base de datos y nos iremos al siguiente apartado para copiar lo siguiente:
 ![imagen](https://github.com/user-attachments/assets/f7a1291d-50ab-49a5-a292-5be4ccec8dee)
 
+Ahora volveremos a nuestra instancia EC2 para ejecutar el siguiente comando donde pegaremos el punto de enlace de nuestra base de datos y así conectarnos a ella:
+```ubuntu
+$ mysql -u admin -h dbmiwordpress.cux0zbzopjym.us-east-1.rds.amazonaws.com -p
+```
+
+A continuación ejecutaremos las siguientes líneas de MySQL para crear nuestra base de datos Wordpress:
+```mysql
+mysql> CREATE DATABASE miwordpress; 
+mysql> CREATE USER 'hnungar584'@'%' IDENTIFIED BY 'Gvuubw56'; 
+mysql> GRANT ALL PRIVILEGES ON wordpress.* TO 'hnungar584'@'%'; 
+mysql> FLUSH PRIVILEGES;
+```
+
+Si hemos hecho todo bien hasta ahora. el resultado debería de ser el siguiente:
+![image](https://github.com/user-attachments/assets/777ba012-4a88-43d6-ac9c-8218bff693ed)
+
 
 
