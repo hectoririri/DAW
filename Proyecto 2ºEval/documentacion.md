@@ -226,5 +226,17 @@ mysql> FLUSH PRIVILEGES;
 Si hemos hecho todo bien hasta ahora. el resultado debería de ser el siguiente:
 ![image](https://github.com/user-attachments/assets/777ba012-4a88-43d6-ac9c-8218bff693ed)
 
+Ahora accederemos a la IP de nuestra instancia EC2 desde nuestro navegador para comenzar con la instalación de Wordpress:
+![image](https://github.com/user-attachments/assets/646af4cb-a05b-4304-aae8-a74070a7fcca)
+
+Introduciremos los datos con los que trabajamos anteriormente ejecutando las órdenes MySQL, el punto de enlace de nuestra instancia RDS y continuamos:
+![image](https://github.com/user-attachments/assets/1bae36a7-26f8-47f7-9b6b-15d7d1265800)
+
+![image](https://github.com/user-attachments/assets/2d83c2f4-71a9-4e4f-abb9-e720a48c3702)
+
+
+
+
+
 
 
