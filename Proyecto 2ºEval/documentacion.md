@@ -232,6 +232,7 @@ Ahora accederemos a la IP de nuestra instancia EC2 desde nuestro navegador para 
 Introduciremos los datos con los que trabajamos anteriormente ejecutando las órdenes MySQL, el punto de enlace de nuestra instancia RDS y continuamos:
 ![image](https://github.com/user-attachments/assets/1bae36a7-26f8-47f7-9b6b-15d7d1265800)
 
+
 ![image](https://github.com/user-attachments/assets/2d83c2f4-71a9-4e4f-abb9-e720a48c3702)
 
 
