@@ -224,16 +224,49 @@ mysql> FLUSH PRIVILEGES;
 ```
 
 Si hemos hecho todo bien hasta ahora. el resultado debería de ser el siguiente:
-![image](https://github.com/user-attachments/assets/777ba012-4a88-43d6-ac9c-8218bff693ed)
+![imagen](https://github.com/user-attachments/assets/c70bc428-9abc-4d80-846c-002d072eff21)
 
 Ahora accederemos a la IP de nuestra instancia EC2 desde nuestro navegador para comenzar con la instalación de Wordpress:
 ![image](https://github.com/user-attachments/assets/646af4cb-a05b-4304-aae8-a74070a7fcca)
 
-Introduciremos los datos con los que trabajamos anteriormente ejecutando las órdenes MySQL, el punto de enlace de nuestra instancia RDS y continuamos:
+Introduciremos los datos con los que trabajamos anteriormente ejecutando las órdenes MySQL, es decir, el punto de enlace de nuestra instancia RDS, usuario y contraseña creados, nombre de la base de datos creada y continuamos:
 ![image](https://github.com/user-attachments/assets/1bae36a7-26f8-47f7-9b6b-15d7d1265800)
 
+Copiaremos todo el código proporcionado en la siguiente ventana para pegarlo en un fichero que crearemos en nuestra instancia EC2 a continuación:
+![imagen](https://github.com/user-attachments/assets/7a65019f-01ad-41d4-84ed-41a54719d8a7)
 
-![image](https://github.com/user-attachments/assets/2d83c2f4-71a9-4e4f-abb9-e720a48c3702)
+Volveremos a nuestra instancia EC2 y ejecutaremos los siguientes comandos para crear el fichero:
+```ubuntu
+$ cd /var/www/html
+$ sudo nano wp-config.php
+```
+Una vez abierto el editor de archivos pegaremos el contenido y guardaremos pulsando **"Ctrl+O + Enter"**. Si lo hemos hecho bien tendremos el siguiente fichero:
+*(Las capturas son erroneas y se encuentran en otra ubicación. Todo esto lo hacemos en la ubicación **"/var/www/html"**)*
+1/2![imagen](https://github.com/user-attachments/assets/fc876466-2fbe-40c6-be31-9a3e817cbd28)
+2/2![imagen](https://github.com/user-attachments/assets/1845e82b-35bd-4549-acf5-ee331488141d)
+ 
+Iremos ahora al navegador web donde estabamos realizando la instalación de wordpress y pulsaremos sobre **"Run the installation"**:
+![imagen](https://github.com/user-attachments/assets/f84fcf7c-8d9c-410c-a10c-88d44027a238)
+
+Indicaremos el título de nuestro sitio, nombre de usuario, contraseña y correo que usaremos para nuestro usuario de Wordpress. Por último pulsaremos sobre **"Install Wordpress"** para comenzar con la instalación:
+![imagen](https://github.com/user-attachments/assets/35849ae7-1afb-4b73-be0b-ca91c2494622)
+
+Una vez se haya terminado la instalación de este pulsaremos sobre **"Log in"** para iniciar sesión con el usuario y contraseña que configuramos en la pantalla anterior:
+1/3![imagen](https://github.com/user-attachments/assets/8df8d6b4-73d1-4897-b91a-d2a72454447e)
+2/3![imagen](https://github.com/user-attachments/assets/bdb6e229-41cc-47c2-87b9-9eadc6456541)
+3/3![imagen](https://github.com/user-attachments/assets/0228ed20-cb71-4227-af90-cdd6e9f3280c)
+
+Con esto hemos terminado con la instalación de Wordpress.
+
+#7º Conexión de EFS a directorio WP-Content
+Ahora conectaremos la instancia EFS que creamos anteriormente al directorio wp-content para el almacenaje de los ficheros.
+Primero haremos una copia de seguridad de este directorio y lo llamaremos **"wp-content-old"**. Para ello ejecutaremos los siguientes comandos:
+```ubuntu
+$ cd /var/www/html
+$ sudo cp -r wp-content wp-content-old
+```
+![imagen](https://github.com/user-attachments/assets/4cbf3c8c-0208-4bcb-a6bb-f182c7ef888a)
+
 
 
 
