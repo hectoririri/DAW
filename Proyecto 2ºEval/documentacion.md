@@ -267,7 +267,18 @@ $ sudo cp -r wp-content wp-content-old
 ```
 ![imagen](https://github.com/user-attachments/assets/4cbf3c8c-0208-4bcb-a6bb-f182c7ef888a)
 
+Ahora modificaremos el usuario y grupo de la carpeta wp-content a www-data para que no de error de escritura cuando se suban archivos desde Wordpress. Ejecutaremos el siguiente comando:
+```ubuntu
+$ sudo chown www-data:www-data wp-content
+```
+![imagen](https://github.com/user-attachments/assets/f1c1aea7-4211-477c-a276-0dc0a7c45b3b)
 
+Ahora vincularemos esta carpeta con la instancia EFS utilizando el comando de montar que nos proporciona este. Para ello buscaremos nuestra EFS, entraremos en ella y pulsaremos sobre **"Asociar"**. Ahora copiaremos el siguiente comando y lo usaremos en nuestra carpeta wp-content:
+1/2![imagen](https://github.com/user-attachments/assets/f8b95f18-4e1a-4fe0-924e-b5c70d6ea9ab)
+*(En el comando copiado cambiaremos el nombre de la carpeta "efs" por la que queremos enlazar, que es "wp-content")*
+2/2![imagen](https://github.com/user-attachments/assets/61d80c38-9c8c-40f4-845a-f7fa374f1e45)
+
+Si no devuelve ningún error significa que se ha vinculado correctamente. Con esto hemos terminado nuestra instalación.
 
 
 
