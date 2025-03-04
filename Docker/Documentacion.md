@@ -78,7 +78,13 @@ EXPOSE 3000
 Si obtenemos este resultado hemos seguido los pasos correctamente.
 
 ### Construye el contenedor
-Ahora construiremos 
+Ahora construiremos el contenedor ejecutando el siguiente comando. Este utiliza el fichero Dockfile que creamos anteriormente para copiar las instrucciones que escribimos en él en nuestra nueva aplicación:
+```ubuntu
+$ sudo docker build -t getting-started .
+```
+![image](https://github.com/user-attachments/assets/eb18699d-7790-4685-bcf9-3345ba6390c4)
+
+
 ### Ejecútalo
 ### Create una cuenta en hub.docker.com
 ### Publícalo
