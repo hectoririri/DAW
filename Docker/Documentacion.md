@@ -84,8 +84,17 @@ $ sudo docker build -t getting-started .
 ```
 ![image](https://github.com/user-attachments/assets/eb18699d-7790-4685-bcf9-3345ba6390c4)
 
-
 ### Ejecútalo
+Para ejecutar nuestro contenedor usaremos el comando `docker run` con los siguientes parámetros. Esto nos permitirá ejecutar el contenedor y devolvernos de vuelta a la terminal:
+```ubuntu
+$ sudo docker run -d -p 127.0.0.1:3000:3000 getting-started
+```
+Podemos ver cómo hemos ejecutado el comando correctamente al igual que nuestro contenedor ahora está corriendo en la dirección `127.0.0.1:3000:`
+![imagen](https://github.com/user-attachments/assets/b73726e4-7569-4f71-9711-97274b3c3e3c)
+
+Para acceder a nuestro contenedor accederemos a nuestra instancia EC2 de AWS desde el navegador, entrando por el puerto 3000 estaremos accediendo al contenedor:
+
+
 ### Create una cuenta en hub.docker.com
 ### Publícalo
 
