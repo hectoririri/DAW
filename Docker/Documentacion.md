@@ -92,11 +92,43 @@ $ sudo docker run -d -p 127.0.0.1:3000:3000 getting-started
 Podemos ver cómo hemos ejecutado el comando correctamente al igual que nuestro contenedor ahora está corriendo en la dirección `127.0.0.1:3000:`
 ![imagen](https://github.com/user-attachments/assets/b73726e4-7569-4f71-9711-97274b3c3e3c)
 
-Para acceder a nuestro contenedor accederemos a nuestra instancia EC2 de AWS desde el navegador, entrando por el puerto 3000 estaremos accediendo al contenedor:
-
-
 ### Create una cuenta en hub.docker.com
+Accederemos a la página [hub.docker.com](hub.docker.com) y pulsaremos sobre **"Sign up"**. Aquí iniciaremos sesión con Google:
+1/3![image](https://github.com/user-attachments/assets/a7f58a72-2625-43b0-b280-e1fdd1853ec2)
+2/3![image](https://github.com/user-attachments/assets/94d14cf2-7f88-413f-be23-0606033c1cb3)
+3/3![image](https://github.com/user-attachments/assets/1c7cda57-9fe5-45a0-9e21-dcf9f6392172)
+
 ### Publícalo
+Para publicarlo volveremos a la terminal de nuestra instancia EC2 y ejecutaremos el comando `docker login` para iniciar sesión con nuestra cuenta. Copiaremos el enlace y código único que nos muestra la terminal para iniciar sesión mediante el navegador. En el navegador lo introduciremos:
+```ubuntu
+$ sudo docker login
+```
+1/5![image](https://github.com/user-attachments/assets/068f8c8a-b725-4d9d-b6e5-d928cf46a320)
+2/5![image](https://github.com/user-attachments/assets/d1e5dc2c-249a-4964-ad08-b5fe975ae23f)
+3/5![image](https://github.com/user-attachments/assets/f2d43752-c7c2-480e-9f43-a549440adf1e)
+4/5![image](https://github.com/user-attachments/assets/131f10f6-4a16-4713-bd50-0e0e2c8e1635)
+5/5![image](https://github.com/user-attachments/assets/3b271c1d-00b9-4a79-adb9-1f28e1e5abb7)
+
+Para publicar nuestro contenedor usaremos el comando `docker tag` con los siguientes parámetros para que el nombre de la subida sea aceptada en el registro público:
+```ubuntu
+$ sudo docker tag getting-started hectoririri/getting-started:v1
+```
+![image](https://github.com/user-attachments/assets/03c68c9a-2afd-423b-bdb7-ddccffde36bf)
+
+Una vez creado nuestro alias para la subida, ejecutaremos el comando `docker push` con el nombre de nuestro contenedor para subirlo:
+```ubuntu
+$ sudo docker push hectoririri/getting-started:v1
+```
+*(cambie el nombre del tag a 1.0 por eso en la captura se ve distinto)*
+![image](https://github.com/user-attachments/assets/30a262a0-6bfb-4f2f-9d84-5f03ffc7785b)
+
+Con esto habremos subido nuestr contenedor.
+
+
+
+
+
+
 
 
 
