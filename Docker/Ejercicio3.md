@@ -10,7 +10,8 @@ $ sudo docker pull nginx
 Podemos ver en los distintos mensajes que se ha descargado correctamente.
 
 ## Muestra un listado de todas la imágenes
-
+Con el comando `docker images ls` podremos mostrar todas las imágenes que tengamos descargadas en nuestro equipo:
+![image](https://github.com/user-attachments/assets/1b8f94c9-b998-41b1-89a6-431deecb54fa)
 
 ## Ejecuta un contenedor hello-world y dale nombre “myhello1”
 ## Ejecuta un contenedor hello-world y dale nombre “myhello2”
