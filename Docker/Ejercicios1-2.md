@@ -122,13 +122,4 @@ $ sudo docker push hectoririri/getting-started:v1
 *(cambie el nombre del tag a 1.0 por eso en la captura se ve distinto)*
 ![image](https://github.com/user-attachments/assets/30a262a0-6bfb-4f2f-9d84-5f03ffc7785b)
 
-Con esto habremos subido nuestr contenedor.
-
-
-
-
-
-
-
-
-
+Con esto habremos subido nuestro contenedor.
