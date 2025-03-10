@@ -17,4 +17,5 @@ El resultado debe ser el siguiente:
 ### Ejemplo 2 [enlace](https://github.com/josedom24/curso_docker_ies/blob/main/modulo3/tomcat.md)
 
 
-### Ejemplo 3 [enlace](https://github.com/josedom24/curso_docker_ies/blob/main/modulo3/guestbook.md)
+### Ejemplo 3: Despliegue de la aplicación Guestbook [enlace](https://github.com/josedom24/curso_docker_ies/blob/main/modulo3/guestbook.md)
+
