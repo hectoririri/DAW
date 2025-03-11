@@ -1,7 +1,7 @@
 # Ejercicio 6
 ## Lleva a cabo al menos tres de los ejemplos mostrados en el módulo 5 “Creación de imágenes Docker” y documentalo en tu repositorio incluyendo capturas de pantalla.
 ### Ejemplo 1: Construcción de imágenes con una una aplicación Python [enlace](https://github.com/josedom24/curso_docker_ies/blob/main/modulo5/ejemplo3.md)
-Para este ejemplo, primero crearemos nuestro dockerfile y el directorio donde monstaremos la imagen. Ejecutaremos los siguientes comandos:
+Para este ejemplo, primero crearemos nuestro **Dockerfile** y el directorio donde monstaremos la imagen. Ejecutaremos los siguientes comandos:
 ```ubuntu
 $ sudo mkdir app
 $ sudo nano Dockerfile
@@ -50,5 +50,35 @@ $ docker run -d -p 80:3000 --name ejemplo2 josedom24/ejemplo3:v1
 ```
 ![image](https://github.com/user-attachments/assets/15c69965-b149-4c37-956c-b96892282be4)
 
-### Ejemplo 2:  [enlace]()
+### Ejemplo 2: Construcción de imágenes con una una aplicación PHP [enlace](https://github.com/josedom24/curso_docker_ies/blob/main/modulo5/ejemplo2.md)
+Para este ejemplo seguiremos los mismos pasos que en el anterior. Primero crearemos la carpeta y nuestro fichero **Dockerfile**:
+```ubuntu
+$ sudo mkdir app
+$ sudo nano Dockerfile
+
+Pegamos lo siguiente:
+# syntax=docker/dockerfile:1
+FROM debian:stable-slim
+RUN apt-get update && apt-get install -y apache2 libapache2-mod-php php && apt-get clean && rm -rf /var/lib/apt/lists/* && rm /var/www/html/index.html
+COPY app /var/www/html/
+EXPOSE 80
+CMD apache2ctl -D FOREGROUND
+```
+![image](https://github.com/user-attachments/assets/641af839-746c-46fd-b05c-a902a25c7000)
+
+Ahora creamos la imagen con el comando `docker build`:
+```ubuntu
+$ docker build -t josedom24/ejemplo2:v1 .
+```
+![image](https://github.com/user-attachments/assets/d5bfda8a-a7d8-4467-884f-04e8328f5740)
+
+Buscaremos nuestra imagen en las que tenemos en nuestro dispositivo con `docker images`:
+```ubuntu
+$ docker images | grep ejemplo2
+$ sudo docker run -d -p 80:80 --name ejemplo3 josedom24/ejemplo2:v1
+```
+![image](https://github.com/user-attachments/assets/24a4f732-44c7-4ca3-bf78-badd79d1a92b)
+
+
+
 
