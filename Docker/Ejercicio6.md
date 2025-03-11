@@ -80,5 +80,49 @@ $ sudo docker run -d -p 80:80 --name ejemplo3 josedom24/ejemplo2:v1
 ![image](https://github.com/user-attachments/assets/24a4f732-44c7-4ca3-bf78-badd79d1a92b)
 
 
+### Ejemplo 3: Construcción de imágenes con una página estática [enlace](https://github.com/josedom24/curso_docker_ies/blob/main/modulo5/ejemplo1.md)
+Repetiremos los ejemplos anteriores. Esta vez crearemos un directorio donde almacenaremos una página web .html además de nuestro fichero **Dockerfile**:
+```ubuntu
+$ mkdir public_html
+$ sudo nano public_html/index.html
+```
+```html
+pegamos lo siguiente
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina web HNG</title>
+</head>
+<body>
+    <h1>Muestra de que la página web funciona</h1>
+</body>
+</html>
+```
+Y ahora crearemos el fichero **Dockerfile**:
+```ubuntu
+$ nano Dockerfile
+pegamos lo siguiente
+# syntax=docker/dockerfile:1
+FROM debian:stable-slim
+RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+WORKDIR /var/www/html/
+COPY public_html .
+EXPOSE 80
+CMD apache2ctl -D FOREGROUND
+```
+
+Creamos la imagen con `docker build` y comprobamos que se ha creado con `docker images`:
+```ubuntu
+$ docker build -t josedom24/ejemplo1:v1 .
+$ docker images | grep ejemplo1
+```
+
+Ahora crearemos el contenedor con `docker run`:
+```ubuntu
+$ docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v1
+```
+
 
 
