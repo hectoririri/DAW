@@ -112,17 +112,20 @@ COPY public_html .
 EXPOSE 80
 CMD apache2ctl -D FOREGROUND
 ```
+![image](https://github.com/user-attachments/assets/f3853ff6-ea55-41c5-ad4f-dcb147717272)
 
 Creamos la imagen con `docker build` y comprobamos que se ha creado con `docker images`:
 ```ubuntu
 $ docker build -t josedom24/ejemplo1:v1 .
 $ docker images | grep ejemplo1
 ```
+![image](https://github.com/user-attachments/assets/6a0c5bb9-c641-4447-8249-2e9319b71b56)
 
 Ahora crearemos el contenedor con `docker run`:
 ```ubuntu
 $ docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v1
 ```
+![image](https://github.com/user-attachments/assets/82f9184b-f7e2-42a5-9cfb-b028d743951e)
 
 
 
