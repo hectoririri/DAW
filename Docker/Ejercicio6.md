@@ -127,5 +127,8 @@ $ docker run -d -p 80:80 --name ejemplo1 josedom24/ejemplo1:v1
 ```
 ![image](https://github.com/user-attachments/assets/82f9184b-f7e2-42a5-9cfb-b028d743951e)
 
+Ahora ingresamos nuestra dirección en el navegador para acceder al contenedor:
+![image](https://github.com/user-attachments/assets/d712e7fd-4247-4f89-aec8-2cb6a5204793)
+
 
 
