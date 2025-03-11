@@ -59,12 +59,15 @@ La aplicación de Guestbook también utiliza dos contenedores que tienen que com
 ```ubuntu
 $ docker network create red_guestbook
 ```
+![imagen](https://github.com/user-attachments/assets/1529c397-0862-4a71-b55c-d1633d2d88c6)
 
 Ahora crearemos ambos contenedores dentro de esta red:
 ```ubuntu
 $ docker run -d --name redis --network red_guestbook -v /opt/redis:/data redis redis-server --appendonly yes
 $ docker run -d -p 80:5000 --name guestbook --network red_guestbook iesgn/guestbook
 ```
+![imagen](https://github.com/user-attachments/assets/aa3c54c0-90b3-4b98-b823-cc91f3e69c32)
 
 Ahora nos iremos a nuestro navegador y accederemos a nuestra dirección usando localhost:
+![imagen](https://github.com/user-attachments/assets/59873802-40dc-477b-977e-eea53bb12195)
 
